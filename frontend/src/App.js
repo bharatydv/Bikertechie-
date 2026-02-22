@@ -1,6 +1,8 @@
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Toaster } from 'sonner';
+import { useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 // Layout Components
 import { Navbar } from "./components/layout/Navbar";
@@ -12,20 +14,45 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Training from "./pages/Training";
 import Contact from "./pages/Contact";
+import Careers from "./pages/Careers";
+
+// Scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
+};
+
+// Animated page wrapper
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/training" element={<Training />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
 
 function App() {
   return (
     <div className="App min-h-screen bg-[#030712]">
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <main className="min-h-screen">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/training" element={<Training />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+          <AnimatedRoutes />
         </main>
         <Footer />
       </BrowserRouter>
