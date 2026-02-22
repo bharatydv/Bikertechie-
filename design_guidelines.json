@@ -1,0 +1,194 @@
+{
+  "brand_identity": {
+    "name": "BikerTechie",
+    "description": "Premium Cloud Consulting & AI Company",
+    "mission": "Empowering enterprise growth through scalable cloud solutions and intelligent AI automation.",
+    "emotional_tone": "Authoritative, Innovative, Scalable, Trusted, Future-Proof",
+    "visual_style": "Dark Enterprise Tech",
+    "logo_url": "https://customer-assets.emergentagent.com/job_enterprise-growth-ai/artifacts/yu9n15sm_WhatsApp%20Image%202026-02-22%20at%201.57.18%20PM.jpeg",
+    "google_partner_badge": "https://customer-assets.emergentagent.com/job_enterprise-growth-ai/artifacts/o5mb40lt_image.png"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Outfit, sans-serif",
+      "weights": ["500", "600", "700"],
+      "tracking": "-0.02em",
+      "usage": "All section headers, hero titles, and card titles."
+    },
+    "body": {
+      "font_family": "Inter, sans-serif",
+      "weights": ["400", "500"],
+      "tracking": "normal",
+      "usage": "Paragraphs, navigation, buttons, and form labels."
+    },
+    "mono": {
+      "font_family": "JetBrains Mono, monospace",
+      "usage": "Code snippets, technical metrics, or tiny accent labels."
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": {
+        "default": "#030712",
+        "secondary": "#0f172a",
+        "card": "#111827"
+      },
+      "primary": {
+        "main": "#7c3aed",
+        "gradient_start": "#7c3aed",
+        "gradient_end": "#3b82f6"
+      },
+      "accent": {
+        "cyan": "#06b6d4",
+        "teal": "#14b8a6",
+        "glow": "rgba(124, 58, 237, 0.5)"
+      },
+      "text": {
+        "primary": "#f8fafc",
+        "secondary": "#94a3b8",
+        "muted": "#64748b"
+      },
+      "border": {
+        "default": "rgba(255, 255, 255, 0.1)",
+        "active": "rgba(124, 58, 237, 0.3)"
+      }
+    },
+    "gradients": {
+      "hero_text": "bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-cyan-400",
+      "primary_btn": "bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500",
+      "glass_surface": "bg-slate-950/50 backdrop-blur-xl border border-white/10"
+    }
+  },
+  "spacing_and_layout": {
+    "container": {
+      "max_width": "max-w-7xl",
+      "padding": "px-4 sm:px-6 lg:px-8",
+      "center": "mx-auto"
+    },
+    "section_spacing": {
+      "py": "py-20 lg:py-32",
+      "gap": "gap-8 lg:gap-12"
+    },
+    "grid_systems": {
+      "bento": "grid grid-cols-1 md:grid-cols-3 gap-6",
+      "features": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+    },
+    "border_radius": {
+      "card": "rounded-2xl",
+      "button": "rounded-full"
+    }
+  },
+  "components": {
+    "navbar": {
+      "style": "floating-glass",
+      "structure": "Logo (Left) - Links (Center) - CTA (Right)",
+      "specs": "fixed top-4 left-4 right-4 z-50 rounded-full border border-white/10 bg-slate-950/70 backdrop-blur-md shadow-lg"
+    },
+    "buttons": {
+      "primary": "h-11 px-8 rounded-full bg-gradient-to-r from-violet-600 to-blue-600 text-white font-medium hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-all",
+      "secondary": "h-11 px-8 rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10 transition-all",
+      "ghost": "text-slate-300 hover:text-white hover:bg-white/5"
+    },
+    "cards": {
+      "service_card": "group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/50 p-8 transition-all hover:border-violet-500/50 hover:shadow-[0_0_30px_rgba(124,58,237,0.1)]",
+      "feature_card": "p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-colors"
+    },
+    "forms": {
+      "input": "h-12 bg-slate-950/50 border-white/10 focus:border-violet-500 focus:ring-violet-500/20 rounded-lg text-white placeholder:text-slate-500",
+      "label": "text-sm font-medium text-slate-300 mb-2 block"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "Ensure backdrop-blur-xl is used with very low opacity backgrounds (e.g., bg-slate-950/60).",
+    "glow_effects": "Use drop-shadow or box-shadow with color to create neon glow on active elements.",
+    "gradients": "Use 'via' stops to create rich, deep gradients (e.g., from-slate-950 via-slate-900 to-slate-950).",
+    "texture": "Add a subtle noise overlay to the background if possible, or keep it clean deep slate."
+  },
+  "assets": {
+    "images": {
+      "hero_bg": {
+        "url": "https://images.pexels.com/photos/28428585/pexels-photo-28428585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "alt": "Abstract futuristic 3D ring",
+        "description": "Use as a background element or hero visual, darkened with an overlay."
+      },
+      "services_bg": {
+        "url": "https://images.pexels.com/photos/17323801/pexels-photo-17323801.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "alt": "Modern Server Room",
+        "description": "Use for 'Cloud Infrastructure' or 'Technical' sections."
+      },
+      "team_meeting": {
+        "url": "https://images.pexels.com/photos/7647938/pexels-photo-7647938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "alt": "Diverse Corporate Team",
+        "description": "Use for 'About Us' or 'Careers' section."
+      },
+      "abstract_cube": {
+        "url": "https://images.pexels.com/photos/28428592/pexels-photo-28428592.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "alt": "Abstract Blue Cube",
+        "description": "Use for 'AI Solutions' or specific feature highlight."
+      }
+    },
+    "icons": {
+      "library": "lucide-react",
+      "style": "Stroke width 1.5px, size 24px (w-6 h-6). Color: text-violet-400 or text-cyan-400."
+    }
+  },
+  "pages_structure": {
+    "home": [
+      "Hero (Headline, Subhead, 2 CTAs, Background Glow)",
+      "Logo Cloud (Trusted By - Grayscale logos)",
+      "Value Prop (3 cols - Speed, Scale, Security)",
+      "Services Highlight (Bento Grid)",
+      "Why Choose Us (Split layout: Text + Image)",
+      "Testimonials (Marquee)",
+      "CTA Section (Big gradient background)"
+    ],
+    "about": [
+      "Hero (Mission Statement)",
+      "Story/History",
+      "Team Grid",
+      "Values (Card Grid)",
+      "CTA"
+    ],
+    "services": [
+      "Hero (Overview)",
+      "Service 1: AI Automation (Detail + Icon)",
+      "Service 2: Cloud Consulting (Detail + Icon)",
+      "Service 3: Web Dev (Detail + Icon)",
+      "Process (Step 1, 2, 3)",
+      "CTA"
+    ],
+    "training": [
+      "Hero (Upskill your team)",
+      "Course List (Cards with Price/Duration)",
+      "Enrollment Form (Sticky or Modal)",
+      "CTA"
+    ],
+    "contact": [
+      "Split Layout",
+      "Left: Contact Info (Email, Phone, Map)",
+      "Right: Form (Name, Email, Company, Message)",
+      "Social Links"
+    ]
+  },
+  "universal_guidelines": [
+    "Always use the dark theme by default.",
+    "Ensure high contrast for text (APCA/WCAG AA).",
+    "Interactive elements must have a :hover state (glow or lift).",
+    "Use 'Outfit' font for all headings (h1-h6).",
+    "Use 'Inter' font for all body text.",
+    "Do NOT use gradients on small text; only on large headings.",
+    "All buttons must be pill-shaped (rounded-full).",
+    "Animations: Use framer-motion for simple fade-ins (opacity: 0 -> 1, y: 20 -> 0).",
+    "Use the provided Logo URL in the Navbar and Footer.",
+    "Display the Google Cloud Partner badge in the Footer or Hero.",
+    "Use data-testid attributes for all interactive elements."
+  ],
+  "instructions_to_main_agent": [
+    "Install 'framer-motion' and 'clsx' and 'tailwind-merge' if not present.",
+    "Install '@radix-ui/react-slot' for button components.",
+    "Use the 'lucide-react' icons for services.",
+    "Implement the 'Navbar' as a sticky, glassmorphic element.",
+    "Ensure the 'Contact' form connects to the FastAPI backend (create a placeholder fetch call).",
+    "Use the provided image URLs for their respective sections."
+  ]
+}
