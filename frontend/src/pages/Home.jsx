@@ -277,6 +277,41 @@ export const Home = () => {
         </motion.div>
       </section>
 
+      {/* Google Cloud Partner Section */}
+      <section className="py-12 relative overflow-hidden" data-testid="gcp-partner-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row items-center justify-center gap-8 p-8 rounded-3xl bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-slate-900/80 border border-white/10"
+          >
+            <motion.img 
+              src={GCP_BADGE} 
+              alt="Google Cloud Partner" 
+              className="h-20 w-auto rounded-xl bg-white p-3 shadow-lg"
+              whileHover={{ scale: 1.05, rotate: 2 }}
+            />
+            <div className="text-center md:text-left">
+              <h3 className="text-xl font-bold text-white mb-2">Official Google Cloud Partner</h3>
+              <p className="text-slate-400 max-w-md">
+                Certified expertise in Google Cloud Platform. We design, deploy, and optimize 
+                cloud infrastructure that scales with your business.
+              </p>
+            </div>
+            <motion.a
+              href="/services#cloud-consulting"
+              onClick={(e) => handleNavClick(e, '/services')}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 transition-all whitespace-nowrap"
+              whileHover={{ scale: 1.02 }}
+            >
+              <Cloud size={18} />
+              Cloud Services
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-16 border-y border-white/5 bg-slate-950/50 relative overflow-hidden" data-testid="stats-section">
         <motion.div 
