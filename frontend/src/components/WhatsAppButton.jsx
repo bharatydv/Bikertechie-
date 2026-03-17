@@ -9,7 +9,7 @@ export const WhatsAppButton = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-[100]" data-testid="whatsapp-button-container">
+    <div className="fixed bottom-6 right-6 z-[9999]" data-testid="whatsapp-button-container">
       {/* Tooltip */}
       <AnimatePresence>
         {showTooltip && (
