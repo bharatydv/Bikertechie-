@@ -71,13 +71,6 @@ const testimonials = [
   },
 ];
 
-const stats = [
-  { value: '50+', label: 'Projects Shipped' },
-  { value: '98%', label: 'Happy Clients' },
-  { value: '40%', label: 'Avg. Cost Savings' },
-  { value: '24/7', label: 'Support Ready' },
-];
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0 }
@@ -191,8 +184,7 @@ export const Home = () => {
               >
                 Consulting Partner
               </motion.span>
-              <br />
-              <span className="text-white">for Real Business Growth</span>
+              
             </motion.h1>
 
             {/* Subheadline */}
@@ -207,8 +199,7 @@ export const Home = () => {
               variants={fadeInUp}
               className="text-base text-slate-500 mb-10 max-w-xl mx-auto"
             >
-              We help businesses build scalable infrastructure, automate with intelligence, 
-              and grow faster. No buzzwords—just solutions that work.
+              Scaling businesses with AI & Cloud. Training the next generation for industry-leading certifications.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -257,24 +248,7 @@ export const Home = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div 
-            className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2"
-            animate={{ y: [0, 5, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <motion.div 
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="w-1.5 h-1.5 rounded-full bg-gradient-to-b from-violet-400 to-cyan-400"
-            />
-          </motion.div>
-        </motion.div>
+       
       </section>
 
       {/* Google Cloud Partner Section */}
@@ -306,225 +280,197 @@ export const Home = () => {
               whileHover={{ scale: 1.02 }}
             >
               <Cloud size={18} />
-              Cloud Services
+              Explore Services
             </motion.a>
           </motion.div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 border-y border-white/5 bg-slate-950/50 relative overflow-hidden" data-testid="stats-section">
-        <motion.div 
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 50%)'
-          }}
-        />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+
+
+      {/* Training Highlight */}
+      {/* Training & Certification Highlight */}
+<section className="py-24 relative bg-gradient-to-b from-violet-500/5 to-transparent" data-testid="training-highlight-section">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div 
+      className="rounded-3xl border border-white/10 bg-slate-900/30 p-8 md:p-12 overflow-hidden relative"
+      whileHover={{ borderColor: 'rgba(124, 58, 237, 0.3)' }}
+    >
+      {/* Background Glow */}
+      <motion.div 
+        className="absolute -top-40 -right-40 w-80 h-80 bg-violet-500/20 rounded-full blur-[100px]"
+        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+        transition={{ duration: 6, repeat: Infinity }}
+      />
+      
+      <div className="relative grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span className="text-cyan-400 text-sm font-medium uppercase tracking-wider mb-4 block">
+            Career Accelerator
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            Expert-Led Training & <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">
+              Global Certification
+            </span>
+          </h2>
+          <p className="text-slate-400 leading-relaxed mb-6">
+            Our training programs go beyond theory. Learn from <strong>Industry Practitioners </strong>  
+             through hands-on projects and earn the <strong>Professional Certificates.</strong> 
+           
+          </p>
+          
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            {[
+              'Practitioner-Led Mentorship', 
+              'Enterprise-Scale Projects', 
+              'Global Certification Prep', 
+              'Career Placement Strategy'
+            ].map((item, idx) => (
+              <motion.li 
+                key={item} 
+                className="flex items-center gap-3 text-slate-300 text-sm"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-                whileHover={{ scale: 1.05 }}
+                transition={{ delay: idx * 0.1 }}
               >
-                <motion.div 
-                  className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400 mb-2"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
-                >
-                  {stat.value}
-                </motion.div>
-                <div className="text-slate-500 text-sm">{stat.label}</div>
-              </motion.div>
+                <CheckCircle size={18} className="text-cyan-400" />
+                {item}
+              </motion.li>
             ))}
-          </div>
+          </ul>
+
+          <motion.a
+            href="/training"
+            onClick={(e) => handleNavClick(e, '/training')}
+            className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-medium transition-all"
+            whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(6, 182, 212, 0.5)' }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Explore All Programs
+            <ArrowRight size={18} />
+          </motion.a>
         </div>
-      </section>
 
-      {/* About Snapshot */}
-      <section className="py-24 relative" data-testid="about-snapshot-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+        {/* Right Side: Diverse Course Tracks */}
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            { name: 'Cloud & DevOps', color: 'from-blue-400 to-cyan-400' },
+            { name: 'AI & Data Science', color: 'from-violet-400 to-purple-400' },
+            { name: 'Full-Stack Dev', color: 'from-emerald-400 to-teal-400' },
+            { name: 'Digital Strategy', color: 'from-orange-400 to-yellow-400' }
+          ].map((course, idx) => (
+            <motion.div 
+              key={course.name}
+              className="p-5 rounded-2xl bg-slate-950/50 border border-white/10 hover:border-white/30 transition-all text-center group"
+              whileHover={{ y: -5, scale: 1.02 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ delay: idx * 0.1 }}
             >
-              <span className="text-violet-400 text-sm font-medium uppercase tracking-wider mb-4 block">Who We Are</span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                Technology Partners Who Actually Get It
-              </h2>
-              <p className="text-slate-400 leading-relaxed mb-6">
-                We started BikerTechie because we saw too many businesses struggling with 
-                technology that didn't fit their needs. Cookie-cutter solutions. Vendors who 
-                didn't listen. Projects that went over budget and under-delivered.
-              </p>
-              <p className="text-slate-400 leading-relaxed mb-6">
-                So we built something different. A consulting practice where every solution 
-                is designed around your specific challenges. Where we measure success by your 
-                business outcomes, not just technical metrics.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {['Google Cloud Certified Team', 'Real Enterprise Experience', 'AI/ML Implementation Expertise', 'End-to-End Project Delivery'].map((item, idx) => (
-                  <motion.li 
-                    key={item} 
-                    className="flex items-center gap-3 text-slate-300"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                  >
-                    <CheckCircle size={18} className="text-cyan-400" />
-                    {item}
-                  </motion.li>
-                ))}
-              </ul>
-              <motion.a
-                href="/about"
-                onClick={(e) => handleNavClick(e, '/about')}
-                data-testid="about-learn-more"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/10 transition-all"
-                whileHover={{ scale: 1.02, x: 5 }}
-              >
-                Our Story
-                <ArrowRight size={16} />
-              </motion.a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { icon: Server, label: 'Infrastructure', desc: 'Scalable Systems' },
-                  { icon: Database, label: 'Data', desc: 'Analytics & ML' },
-                  { icon: Globe, label: 'Web', desc: 'Modern Apps' },
-                  { icon: Cpu, label: 'AI', desc: 'Automation' },
-                ].map((item, idx) => (
-                  <motion.div 
-                    key={item.label}
-                    className="p-6 rounded-2xl bg-slate-900/50 border border-white/10 hover:border-violet-500/30 transition-all duration-300"
-                    whileHover={{ y: -5, scale: 1.02 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                  >
-                    <motion.div whileHover={{ rotate: 10 }}>
-                      <item.icon size={32} className="text-violet-400 mb-3" />
-                    </motion.div>
-                    <h4 className="text-white font-medium">{item.label}</h4>
-                    <p className="text-slate-500 text-sm">{item.desc}</p>
-                  </motion.div>
-                ))}
+              <div className={`text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${course.color} mb-2`}>
+                {String(idx + 1).padStart(2, '0')}
+              </div>
+              <div className="text-white font-medium text-xs sm:text-sm group-hover:text-white/90">
+                {course.name}
               </div>
             </motion.div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* Services Section */}
-      <section className="py-24 relative bg-gradient-to-b from-transparent via-slate-950/50 to-transparent" data-testid="services-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="text-cyan-400 text-sm font-medium uppercase tracking-wider mb-4 block">What We Do</span>
+      {/* Services Section */}
+<section className="py-24 relative overflow-hidden" data-testid="services-section">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <span className="text-cyan-400 text-sm font-medium uppercase tracking-wider mb-4 block">What We Do</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Solutions That Actually Solve Problems
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Not just technology for technology's sake. Every service we offer is designed 
-              to create measurable business value.
+    
+      <p className="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+        We build the technical foundation your business needs to lead in a digital-first world.
+      </p>
+    </motion.div>
+
+    <motion.div 
+      className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      {services.map((service) => (
+        <motion.div
+          key={service.title}
+          variants={fadeInUp}
+          className="group relative p-10 rounded-[2rem] bg-slate-900/40 border border-white/5 hover:border-violet-500/40 transition-all duration-500 overflow-hidden"
+          whileHover={{ y: -10 }}
+        >
+          {/* Subtle Hover Glow Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-violet-600/5 to-cyan-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          
+          <div className="relative z-10">
+            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 bg-slate-950 border border-white/10 group-hover:border-violet-500/50 transition-colors shadow-xl`}>
+              <service.icon size={32} className={`${
+                service.color === 'violet' ? 'text-violet-400' :
+                service.color === 'cyan' ? 'text-cyan-400' :
+                service.color === 'blue' ? 'text-blue-400' : 'text-teal-400'
+              }`} />
+            </div>
+
+            <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-violet-300 transition-colors">
+              {service.title}
+            </h3>
+            
+            <p className="text-slate-400 leading-relaxed mb-8 text-sm md:text-base">
+              {service.description}
             </p>
-          </motion.div>
 
-          <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                variants={fadeInUp}
-                className="group relative p-8 rounded-3xl bg-slate-900/50 border border-white/10 hover:border-violet-500/30 transition-all duration-500"
-                data-testid={`service-card-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
-                whileHover={{ y: -8 }}
-              >
-                {/* Hover glow */}
-                <motion.div 
-                  className="absolute inset-0 rounded-3xl bg-gradient-to-br from-violet-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                />
-                
-                <div className="relative">
-                  <motion.div 
-                    className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${
-                      service.color === 'violet' ? 'bg-violet-500/10' :
-                      service.color === 'cyan' ? 'bg-cyan-500/10' :
-                      service.color === 'blue' ? 'bg-blue-500/10' : 'bg-teal-500/10'
-                    }`}
-                    whileHover={{ rotate: 5, scale: 1.1 }}
-                  >
-                    <service.icon size={28} className={`${
-                      service.color === 'violet' ? 'text-violet-400' :
-                      service.color === 'cyan' ? 'text-cyan-400' :
-                      service.color === 'blue' ? 'text-blue-400' : 'text-teal-400'
-                    }`} />
-                  </motion.div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">{service.description}</p>
-                  <motion.a 
-                    href="/services"
-                    onClick={(e) => handleNavClick(e, '/services')}
-                    className="inline-flex items-center gap-2 text-sm text-violet-400 hover:text-violet-300 transition-colors"
-                    whileHover={{ x: 5 }}
-                  >
-                    Learn More <ArrowRight size={14} />
-                  </motion.a>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <motion.a
+            <motion.a 
               href="/services"
               onClick={(e) => handleNavClick(e, '/services')}
-              data-testid="view-all-services"
-              className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-gradient-to-r from-violet-600 to-blue-600 text-white font-medium transition-all"
-              whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(124, 58, 237, 0.5)' }}
-              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 group-hover:text-white transition-colors"
+              whileHover={{ x: 5 }}
             >
-              Explore All Services
-              <ArrowRight size={18} />
+              Learn More <ArrowRight size={16} className="text-violet-400" />
             </motion.a>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
 
+    {/* Explore All Services Button */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center"
+    >
+      <motion.a
+        href="/services"
+        onClick={(e) => handleNavClick(e, '/services')}
+        className="inline-flex items-center gap-3 h-14 px-10 rounded-full bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-600 text-white font-bold text-base transition-all shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_40px_rgba(124,58,237,0.6)]"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Explore All Services
+        <ArrowRight size={20} />
+      </motion.a>
+    </motion.div>
+  </div>
+</section>
       {/* Why Choose Us */}
       <section className="py-24 relative" data-testid="why-choose-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -571,80 +517,7 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Training Highlight */}
-      <section className="py-24 relative bg-gradient-to-b from-violet-500/5 to-transparent" data-testid="training-highlight-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="rounded-3xl border border-white/10 bg-slate-900/30 p-8 md:p-12 overflow-hidden relative"
-            whileHover={{ borderColor: 'rgba(124, 58, 237, 0.3)' }}
-          >
-            <motion.div 
-              className="absolute -top-40 -right-40 w-80 h-80 bg-violet-500/20 rounded-full blur-[100px]"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-              transition={{ duration: 6, repeat: Infinity }}
-            />
-            
-            <div className="relative grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="text-cyan-400 text-sm font-medium uppercase tracking-wider mb-4 block">Level Up Your Team</span>
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                  Cloud & AI Training That Actually Prepares You
-                </h2>
-                <p className="text-slate-400 leading-relaxed mb-6">
-                  Our training programs go beyond theory. Learn from practitioners who've 
-                  built real systems, with hands-on labs and projects that prepare you for 
-                  actual work—not just exams.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {['Live Instructor-Led Sessions', 'Real-World Projects', 'Certification Guidance', 'Interview Preparation'].map((item, idx) => (
-                    <motion.li 
-                      key={item} 
-                      className="flex items-center gap-3 text-slate-300"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.1 }}
-                    >
-                      <CheckCircle size={18} className="text-cyan-400" />
-                      {item}
-                    </motion.li>
-                  ))}
-                </ul>
-                <motion.a
-                  href="/training"
-                  onClick={(e) => handleNavClick(e, '/training')}
-                  data-testid="training-cta"
-                  className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-medium transition-all"
-                  whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(6, 182, 212, 0.5)' }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Explore Training
-                  <ArrowRight size={18} />
-                </motion.a>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                {['Cloud Foundations', 'Cloud Architect', 'DevOps & K8s', 'AI on Cloud'].map((course, idx) => (
-                  <motion.div 
-                    key={course}
-                    className="p-5 rounded-2xl bg-slate-950/50 border border-white/10 hover:border-cyan-500/30 transition-all"
-                    whileHover={{ y: -3, scale: 1.02 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                  >
-                    <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400 mb-2">
-                      {String(idx + 1).padStart(2, '0')}
-                    </div>
-                    <div className="text-white font-medium text-sm">{course}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      
 
       {/* Testimonials */}
       <section className="py-24 relative" data-testid="testimonials-section">

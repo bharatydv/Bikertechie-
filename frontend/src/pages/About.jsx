@@ -501,59 +501,72 @@ export const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 relative" data-testid="about-cta">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="rounded-3xl bg-gradient-to-r from-violet-600/20 via-blue-600/20 to-cyan-600/20 border border-white/10 p-12 md:p-16 text-center relative overflow-hidden"
+      {/* CTA */} 
+<section className="py-20 relative" data-testid="about-cta">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="rounded-3xl bg-gradient-to-r from-violet-600/20 via-blue-600/20 to-cyan-600/20 border border-white/10 p-12 md:p-16 text-center relative overflow-hidden"
+    >
+      <motion.div 
+        className="absolute top-0 left-1/4 w-40 h-40 bg-violet-500/30 rounded-full blur-[60px]"
+        animate={{ y: [0, -20, 0] }}
+        transition={{ duration: 4, repeat: Infinity }}
+      />
+      <motion.div 
+        className="absolute bottom-0 right-1/4 w-40 h-40 bg-cyan-500/30 rounded-full blur-[60px]"
+        animate={{ y: [0, 20, 0] }}
+        transition={{ duration: 4, repeat: Infinity }}
+      />
+      
+      <div className="relative">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+          Ready to Work Together?
+        </h2>
+        <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+          Let's have a conversation about your goals and how we can help you achieve them.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
+          <motion.a
+            href="/contact"
+            onClick={(e) => handleNavClick(e, '/contact')}
+            className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-gradient-to-r from-violet-600 to-blue-600 text-white font-medium hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] transition-all"
+            data-testid="about-cta-contact"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            <motion.div 
-              className="absolute top-0 left-1/4 w-40 h-40 bg-violet-500/30 rounded-full blur-[60px]"
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-            />
-            <motion.div 
-              className="absolute bottom-0 right-1/4 w-40 h-40 bg-cyan-500/30 rounded-full blur-[60px]"
-              animate={{ y: [0, 20, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-            />
-            
-            <div className="relative">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                Ready to Work Together?
-              </h2>
-              <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-                Let's have a conversation about your goals and how we can help you achieve them.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <motion.a
-                  href="/contact"
-                  onClick={(e) => handleNavClick(e, '/contact')}
-                  className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-gradient-to-r from-violet-600 to-blue-600 text-white font-medium hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] transition-all"
-                  data-testid="about-cta-contact"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Start a Conversation
-                  <ArrowRight size={18} />
-                </motion.a>
-                <motion.a
-                  href="/services"
-                  onClick={(e) => handleNavClick(e, '/services')}
-                  className="inline-flex items-center gap-2 h-12 px-8 rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/10 transition-all"
-                  data-testid="about-cta-services"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Explore Our Services
-                </motion.a>
-              </div>
-            </div>
-          </motion.div>
+            Start a Conversation
+            <ArrowRight size={18} />
+          </motion.a>
+          <motion.a
+            href="/services"
+            onClick={(e) => handleNavClick(e, '/services')}
+            className="inline-flex items-center gap-2 h-12 px-8 rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/10 transition-all"
+            data-testid="about-cta-services"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Explore Our Services
+            <ArrowRight size={18} />
+          </motion.a>
+          <motion.a
+            href="/training"
+            onClick={(e) => handleNavClick(e, '/training')}
+            className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 text-white font-medium hover:shadow-[0_0_30px_rgba(80,250,255,0.5)] transition-all"
+            data-testid="about-cta-training"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Get Training & Certificates
+            <ArrowRight size={18} />
+          </motion.a>
         </div>
-      </section>
+      </div>
+    </motion.div>
+  </div>
+</section>
     </div>
   );
 };

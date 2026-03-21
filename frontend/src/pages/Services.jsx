@@ -8,8 +8,6 @@ import {
   Cpu, Users, MessageSquare, PieChart, Lightbulb, Rocket
 } from 'lucide-react';
 
-const SERVER_ROOM = "https://images.pexels.com/photos/17323801/pexels-photo-17323801.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
-const ABSTRACT_CUBE = "https://images.pexels.com/photos/28428592/pexels-photo-28428592.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 
 const aiServices = [
   { icon: Workflow, title: 'Business Process Automation', desc: 'Streamline repetitive tasks and workflows with intelligent automation that learns and adapts' },
@@ -18,7 +16,7 @@ const aiServices = [
   { icon: Database, title: 'Machine Learning Deployment', desc: 'Production-ready ML pipelines with continuous training and model monitoring' },
   { icon: BarChart3, title: 'Data Intelligence Systems', desc: 'Transform raw data into actionable business insights with predictive analytics' },
   { icon: Target, title: 'AI-based Lead Systems', desc: 'Intelligent lead scoring and qualification that identifies high-value prospects' },
-  { icon: Cpu, title: 'Custom AI Development', desc: 'Bespoke AI solutions tailored to your unique business challenges and goals' },
+  
 ];
 
 const aiBusinessBenefits = [
@@ -35,9 +33,7 @@ const webServices = [
   { icon: Layers, title: 'School & College Websites', desc: 'Feature-rich educational platforms with student portals, LMS integration, and more' },
   { icon: ShoppingCart, title: 'E-commerce Platforms', desc: 'Full-featured online stores with payment integration, inventory management, and analytics' },
   { icon: Code, title: 'SaaS Applications', desc: 'Scalable software-as-a-service platforms built for growth and multi-tenancy' },
-  { icon: Smartphone, title: 'Custom Web Applications', desc: 'Tailored business applications that solve your specific operational challenges' },
-  { icon: Zap, title: 'Landing Pages', desc: 'High-converting campaign pages optimized for lead generation and sales' },
-  { icon: Server, title: 'Cloud-hosted Systems', desc: 'Applications deployed on secure, scalable cloud infrastructure' },
+  
 ];
 
 const webFeatures = [
@@ -52,12 +48,10 @@ const webFeatures = [
 const cloudServices = [
   { icon: Layers, title: 'Cloud Architecture Design', desc: 'Design scalable, cost-effective infrastructure that grows with your business' },
   { icon: Server, title: 'Cloud Migration', desc: 'Seamless transition from on-premise to cloud with minimal downtime' },
-  { icon: HardDrive, title: 'Infrastructure Setup', desc: 'Production-ready environments configured for performance and security' },
   { icon: GitBranch, title: 'DevOps & CI/CD', desc: 'Automated deployment pipelines for faster, more reliable releases' },
   { icon: Database, title: 'Kubernetes Deployment', desc: 'Container orchestration for microservices at enterprise scale' },
   { icon: Lock, title: 'Security & IAM', desc: 'Identity management and security controls that protect your data' },
   { icon: PieChart, title: 'Cost Optimization', desc: 'Reduce cloud spend by 30-40% through right-sizing and reserved capacity' },
-  { icon: Shield, title: 'Backup & Disaster Recovery', desc: 'Business continuity solutions that ensure data protection and quick recovery' },
 ];
 
 const marketingServices = [
@@ -163,14 +157,10 @@ export const Services = () => {
                 AI Automation
               </h2>
               <p className="text-slate-400 leading-relaxed mb-6">
-                Stop wasting time on repetitive tasks. Our AI automation solutions learn from your 
-                workflows, adapt to your business needs, and scale without adding headcount. From 
-                intelligent chatbots to autonomous agents, we build systems that work 24/7.
+                Automate the work that slows you down.
               </p>
               <p className="text-slate-400 leading-relaxed mb-8">
-                Whether you need to automate customer service, streamline operations, or build 
-                custom ML pipelines, our team has the expertise to deliver production-ready 
-                solutions that create real business impact.
+                Our AI solutions adapt to your workflows, scale with your business, and run 24/7—so you can focus on growth, not operations.
               </p>
               
               <div className="mb-8">
@@ -270,14 +260,10 @@ export const Services = () => {
                 Web Development
               </h2>
               <p className="text-slate-400 leading-relaxed mb-6">
-                Your website is often the first impression customers have of your business. 
-                We build digital products that users love—from sleek corporate websites to 
-                complex SaaS platforms. Performance and design, unified.
+                Make your first impression count.
               </p>
               <p className="text-slate-400 leading-relaxed mb-8">
-                Every project is built with modern technologies, optimized for search engines, 
-                and deployed on secure cloud infrastructure. We don't just build websites—we 
-                build digital assets that drive business growth.
+                We build high-performance websites and scalable digital products—from sleek business sites to advanced SaaS platforms. Designed for speed, optimized for growth, and built to convert.
               </p>
               
               <div className="mb-8">
@@ -334,9 +320,8 @@ export const Services = () => {
                 Cloud Consulting
               </h2>
               <p className="text-slate-400 leading-relaxed mb-4">
-                Expert Google Cloud consulting for enterprises seeking scalable, secure 
-                infrastructure. We design, migrate, and optimize cloud systems that 
-                drive efficiency and reduce costs—typically by 30-40%.
+              Scale with secure cloud solutions.
+We design, migrate, and optimize cloud infrastructure to boost efficiency and cut costs by up to 40%.
               </p>
               <motion.p 
                 className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400 font-medium mb-6 italic"
@@ -347,9 +332,8 @@ export const Services = () => {
                 "We design scalable, secure cloud systems for growing businesses."
               </motion.p>
               <p className="text-slate-400 leading-relaxed mb-8">
-                From cloud-native application development to hybrid cloud strategies, 
-                our certified team brings real-world experience in enterprise architecture. 
-                We don't just implement—we optimize and maintain for long-term success.
+              From build to scale.
+We create cloud-native and hybrid solutions, then optimize and maintain them for long-term success.
               </p>
               
               <motion.a
@@ -371,13 +355,7 @@ export const Services = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="rounded-3xl overflow-hidden border border-white/10 mb-6">
-                <img 
-                  src={SERVER_ROOM} 
-                  alt="Cloud Infrastructure" 
-                  className="w-full h-auto opacity-80"
-                />
-              </div>
+              
               <motion.div 
                 className="grid grid-cols-2 gap-4"
                 variants={staggerContainer}
@@ -473,85 +451,78 @@ export const Services = () => {
       </section>
 
       {/* SEO Section */}
-      <section id="seo" className="py-24 relative" data-testid="seo-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <motion.div 
-                className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500/20 to-green-500/5 flex items-center justify-center mb-6"
-                whileHover={{ rotate: -5, scale: 1.05 }}
-              >
-                <Search size={32} className="text-green-400" />
-              </motion.div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                SEO & Digital Growth
-              </h2>
-              <p className="text-slate-400 leading-relaxed mb-6">
-                Get found by the customers who need you. Our comprehensive SEO strategies 
-                improve your visibility, drive organic traffic, and establish your brand 
-                as an authority in your industry.
-              </p>
-              <p className="text-slate-400 leading-relaxed mb-8">
-                From technical SEO audits to content strategy, we cover all aspects of 
-                search optimization. Our approach combines data-driven analysis with 
-                creative content that resonates with your audience.
-              </p>
-              
-              <motion.div 
-                className="grid grid-cols-2 gap-4 mb-8"
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                {seoServices.map((service) => (
-                  <motion.div 
-                    key={service.title} 
-                    variants={fadeInUp}
-                    className="p-4 rounded-xl bg-slate-900/50 border border-white/10 hover:border-green-500/30 transition-all"
-                    whileHover={{ y: -2 }}
-                  >
-                    <service.icon size={20} className="text-green-400 mb-2" />
-                    <h4 className="text-white font-medium text-sm">{service.title}</h4>
-                    <p className="text-slate-500 text-xs mt-1">{service.desc}</p>
-                  </motion.div>
-                ))}
-              </motion.div>
+<section id="seo" className="py-24 relative bg-slate-900 text-white" data-testid="seo-section">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-              <motion.a
-                href="/contact"
-                onClick={(e) => handleNavClick(e, '/contact')}
-                data-testid="seo-cta"
-                className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-gradient-to-r from-green-600 to-teal-600 text-white font-medium transition-all"
-                whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(34, 197, 94, 0.5)' }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Improve My Rankings
-                <ArrowRight size={18} />
-              </motion.a>
-            </motion.div>
+      {/* Left Side - Only Heading, Description, CTA */}
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+      >
+        <motion.div 
+          className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500/20 to-green-500/5 flex items-center justify-center mb-6"
+          whileHover={{ rotate: -5, scale: 1.05 }}
+        >
+          <Search size={32} className="text-green-400" />
+        </motion.div>
 
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          SEO & Digital Growth
+        </h2>
+
+        <p className="text-slate-400 leading-relaxed mb-6">
+          Get found by the customers who need you. Our comprehensive SEO strategies 
+          improve your visibility, drive organic traffic, and establish your brand 
+          as an authority in your industry.
+        </p>
+        <p className="text-slate-400 leading-relaxed mb-8">
+          From technical SEO audits to content strategy, we cover all aspects of 
+          search optimization. Our approach combines data-driven analysis with 
+          creative content that resonates with your audience.
+        </p>
+
+        {/* CTA Button */}
+        <motion.a
+          href="/contact"
+          onClick={(e) => handleNavClick && handleNavClick(e, '/contact')}
+          data-testid="seo-cta"
+          className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-gradient-to-r from-green-600 to-teal-600 text-white font-medium transition-all"
+          whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(34, 197, 94, 0.5)' }}
+          whileTap={{ scale: 0.98 }}
+        >
+          Improve My Rankings
+          <ArrowRight size={18} />
+        </motion.a>
+      </motion.div>
+
+      {/* Right Side - Services Grid */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="relative"
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {seoServices.map((service) => (
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
+              key={service.title + "-right"}
+              variants={fadeInUp}
+              className="p-4 rounded-xl bg-slate-800/50 border border-white/10 hover:border-green-500/30 transition-all flex flex-col gap-2"
+              whileHover={{ y: -2 }}
             >
-              <div className="rounded-3xl overflow-hidden border border-white/10">
-                <img 
-                  src={ABSTRACT_CUBE} 
-                  alt="Digital Growth" 
-                  className="w-full h-auto opacity-80"
-                />
-              </div>
+              <service.icon size={24} className="text-green-400 mb-2" />
+              <h4 className="text-white font-medium text-sm">{service.title}</h4>
+              <p className="text-slate-400 text-xs mt-1">{service.desc}</p>
             </motion.div>
-          </div>
+          ))}
         </div>
-      </section>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section className="py-24 relative" data-testid="services-cta">
