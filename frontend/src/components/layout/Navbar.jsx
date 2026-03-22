@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
-const LOGO_URL = "https://customer-assets.emergentagent.com/job_enterprise-growth-ai/artifacts/yu9n15sm_WhatsApp%20Image%202026-02-22%20at%201.57.18%20PM.jpeg";
+const LOGO_URL = "https://customer-assets.emergentagent.com/job_enterprise-growth-ai/artifacts/81s6470e_WithoutBG_Logo_1_.png";
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -61,16 +61,36 @@ export const Navbar = () => {
             <a 
               href="/" 
               onClick={(e) => handleNavClick(e, '/')}
-              className="flex items-center gap-3 group" 
+              className="flex items-center gap-3 group relative" 
               data-testid="navbar-logo"
             >
+              {/* Logo glow effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-violet-500/30 to-cyan-500/30 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                animate={{
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              />
               <motion.img 
                 src={LOGO_URL} 
                 alt="BikerTechie Logo" 
-                className="h-10 w-auto"
-                whileHover={{ scale: 1.05 }}
+                className="h-10 w-auto relative z-10 drop-shadow-[0_0_10px_rgba(124,58,237,0.3)]"
+                whileHover={{ 
+                  scale: 1.1,
+                  filter: "drop-shadow(0 0 20px rgba(124, 58, 237, 0.6))"
+                }}
                 transition={{ type: "spring", stiffness: 400 }}
               />
+              <motion.span 
+                className="text-white font-bold text-lg hidden sm:block relative z-10"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">Biker</span>
+                <span className="text-white">Techie</span>
+              </motion.span>
             </a>
 
             {/* Desktop Navigation */}

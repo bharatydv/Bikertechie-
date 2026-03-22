@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, Linkedin, Instagram, Phone, MapPin } from 'lucide-react';
 
-const LOGO_URL = "https://customer-assets.emergentagent.com/job_enterprise-growth-ai/artifacts/yu9n15sm_WhatsApp%20Image%202026-02-22%20at%201.57.18%20PM.jpeg";
+const LOGO_URL = "https://customer-assets.emergentagent.com/job_enterprise-growth-ai/artifacts/81s6470e_WithoutBG_Logo_1_.png";
 const GCP_BADGE = "https://customer-assets.emergentagent.com/job_enterprise-growth-ai/artifacts/o5mb40lt_image.png";
 
 const footerLinks = {
@@ -45,12 +45,31 @@ export const Footer = () => {
 
           {/* Brand */}
           <div>
-            <motion.img 
-              src={LOGO_URL} 
-              alt="BikerTechie" 
-              className="h-10 mb-3"
-              whileHover={{ scale: 1.05 }}
-            />
+            <a href="/" onClick={(e) => handleLinkClick(e, '/')} className="group relative inline-block mb-3">
+              {/* Logo glow effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-violet-500/40 to-cyan-500/40 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                animate={{
+                  scale: [1, 1.3, 1],
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.img 
+                src={LOGO_URL} 
+                alt="BikerTechie" 
+                className="h-12 relative z-10 drop-shadow-[0_0_15px_rgba(124,58,237,0.4)]"
+                whileHover={{ 
+                  scale: 1.1,
+                  filter: "drop-shadow(0 0 25px rgba(124, 58, 237, 0.7))"
+                }}
+                transition={{ type: "spring", stiffness: 300 }}
+              />
+            </a>
+            
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400 font-bold text-lg">Biker</span>
+              <span className="text-white font-bold text-lg">Techie</span>
+            </div>
 
             <p className="text-slate-400 text-sm mb-4">
               Your Cloud & AI consulting partner for scalable digital growth.
