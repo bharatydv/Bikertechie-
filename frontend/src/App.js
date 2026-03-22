@@ -47,6 +47,11 @@ const AnimatedRoutes = () => {
 };
 
 function App() {
+  useEffect(() => {
+    const badge = document.getElementById('emergent-badge');
+    if (badge) badge.style.display = 'none';
+  }, []);
+
   return (
     <div className="App min-h-screen bg-[#030712]">
       <BrowserRouter>
