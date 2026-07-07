@@ -181,7 +181,9 @@ def main():
     print("=" * 60)
     
     # Setup
-    tester = BikerTechieAPITester()
+    import sys
+    base_url = sys.argv[1] if len(sys.argv) > 1 else "https://enterprise-growth-ai.preview.emergentagent.com"
+    tester = BikerTechieAPITester(base_url=base_url)
     
     # Run all tests
     print("\n📋 Running Backend API Tests...")

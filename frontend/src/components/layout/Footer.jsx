@@ -2,8 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, Linkedin, Instagram, Phone, MapPin } from 'lucide-react';
 
-const LOGO_URL = "https://customer-assets.emergentagent.com/job_enterprise-growth-ai/artifacts/81s6470e_WithoutBG_Logo_1_.png";
-const GCP_BADGE = "https://customer-assets.emergentagent.com/job_enterprise-growth-ai/artifacts/o5mb40lt_image.png";
+const LOGO_URL = "/assets/logo.png";
+const GCP_BADGE = "/assets/gcp_partner_badge.png";
 
 const footerLinks = {
   services: [

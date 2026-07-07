@@ -8,7 +8,7 @@ import {
 import { Button } from '../components/ui/button';
 
 const HERO_BG = "https://images.pexels.com/photos/28428585/pexels-photo-28428585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
-const GCP_BADGE = "https://customer-assets.emergentagent.com/job_enterprise-growth-ai/artifacts/o5mb40lt_image.png";
+const GCP_BADGE = "/assets/gcp_partner_badge.png";
 
 const services = [
   {
