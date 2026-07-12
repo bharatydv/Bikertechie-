@@ -286,103 +286,100 @@ export const Home = () => {
         </div>
       </section>
 
-
-
       {/* Training Highlight */}
-      {/* Training & Certification Highlight */}
-<section className="py-24 relative bg-gradient-to-b from-violet-500/5 to-transparent" data-testid="training-highlight-section">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <motion.div 
-      className="rounded-3xl border border-white/10 bg-slate-900/30 p-8 md:p-12 overflow-hidden relative"
-      whileHover={{ borderColor: 'rgba(124, 58, 237, 0.3)' }}
-    >
-      {/* Background Glow */}
-      <motion.div 
-        className="absolute -top-40 -right-40 w-80 h-80 bg-violet-500/20 rounded-full blur-[100px]"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 6, repeat: Infinity }}
-      />
-      
-      <div className="relative grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span className="text-cyan-400 text-sm font-medium uppercase tracking-wider mb-4 block">
-            Career Accelerator
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Expert-Led Training & <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">
-              Global Certification
-            </span>
-          </h2>
-          <p className="text-slate-400 leading-relaxed mb-6">
-            Our training programs go beyond theory. Learn from <strong>Industry Practitioners </strong>  
-             through hands-on projects and earn the <strong>Professional Certificates.</strong> 
-           
-          </p>
-          
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            {[
-              'Practitioner-Led Mentorship', 
-              'Enterprise-Scale Projects', 
-              'Global Certification Prep', 
-              'Career Placement Strategy'
-            ].map((item, idx) => (
-              <motion.li 
-                key={item} 
-                className="flex items-center gap-3 text-slate-300 text-sm"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <CheckCircle size={18} className="text-cyan-400" />
-                {item}
-              </motion.li>
-            ))}
-          </ul>
-
-          <motion.a
-            href="/training"
-            onClick={(e) => handleNavClick(e, '/training')}
-            className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-medium transition-all"
-            whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(6, 182, 212, 0.5)' }}
-            whileTap={{ scale: 0.98 }}
+      {/* 
+      <section className="py-24 relative bg-gradient-to-b from-violet-500/5 to-transparent" data-testid="training-highlight-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="rounded-3xl border border-white/10 bg-slate-900/30 p-8 md:p-12 overflow-hidden relative"
+            whileHover={{ borderColor: 'rgba(124, 58, 237, 0.3)' }}
           >
-            Explore All Programs
-            <ArrowRight size={18} />
-          </motion.a>
-        </div>
-
-        {/* Right Side: Diverse Course Tracks */}
-        <div className="grid grid-cols-2 gap-4">
-          {[
-            { name: 'Cloud & DevOps', color: 'from-blue-400 to-cyan-400' },
-            { name: 'AI & Data Science', color: 'from-violet-400 to-purple-400' },
-            { name: 'Full-Stack Dev', color: 'from-emerald-400 to-teal-400' },
-            { name: 'Digital Strategy', color: 'from-orange-400 to-yellow-400' }
-          ].map((course, idx) => (
             <motion.div 
-              key={course.name}
-              className="p-5 rounded-2xl bg-slate-950/50 border border-white/10 hover:border-white/30 transition-all text-center group"
-              whileHover={{ y: -5, scale: 1.02 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-            >
-              <div className={`text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${course.color} mb-2`}>
-                {String(idx + 1).padStart(2, '0')}
+              className="absolute -top-40 -right-40 w-80 h-80 bg-violet-500/20 rounded-full blur-[100px]"
+              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+              transition={{ duration: 6, repeat: Infinity }}
+            />
+            
+            <div className="relative grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="text-cyan-400 text-sm font-medium uppercase tracking-wider mb-4 block">
+                  Career Accelerator
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                  Expert-Led Training & <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">
+                    Global Certification
+                  </span>
+                </h2>
+                <p className="text-slate-400 leading-relaxed mb-6">
+                  Our training programs go beyond theory. Learn from <strong>Industry Practitioners </strong>  
+                   through hands-on projects and earn the <strong>Professional Certificates.</strong> 
+                  
+                </p>
+                
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                  {[
+                    'Practitioner-Led Mentorship', 
+                    'Enterprise-Scale Projects', 
+                    'Global Certification Prep', 
+                    'Career Placement Strategy'
+                  ].map((item, idx) => (
+                    <motion.li 
+                      key={item} 
+                      className="flex items-center gap-3 text-slate-300 text-sm"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.1 }}
+                    >
+                      <CheckCircle size={18} className="text-cyan-400" />
+                      {item}
+                    </motion.li>
+                  ))}
+                </ul>
+
+                <motion.a
+                  href="/training"
+                  onClick={(e) => handleNavClick(e, '/training')}
+                  className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-medium transition-all"
+                  whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(6, 182, 212, 0.5)' }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Explore All Programs
+                  <ArrowRight size={18} />
+                </motion.a>
               </div>
-              <div className="text-white font-medium text-xs sm:text-sm group-hover:text-white/90">
-                {course.name}
+
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { name: 'Cloud & DevOps', color: 'from-blue-400 to-cyan-400' },
+                  { name: 'AI & Data Science', color: 'from-violet-400 to-purple-400' },
+                  { name: 'Full-Stack Dev', color: 'from-emerald-400 to-teal-400' },
+                  { name: 'Digital Strategy', color: 'from-orange-400 to-yellow-400' }
+                ].map((course, idx) => (
+                  <motion.div 
+                    key={course.name}
+                    className="p-5 rounded-2xl bg-slate-950/50 border border-white/10 hover:border-white/30 transition-all text-center group"
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                  >
+                    <div className={`text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${course.color} mb-2`}>
+                      {String(idx + 1).padStart(2, '0')}
+                    </div>
+                    <div className="text-white font-medium text-xs sm:text-sm group-hover:text-white/90">
+                      {course.name}
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </motion.div>
-  </div>
-</section>
+      </section>
+      */}
 
       {/* Services Section */}
       {/* Services Section */}

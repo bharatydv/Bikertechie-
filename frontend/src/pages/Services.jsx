@@ -564,6 +564,7 @@ We create cloud-native and hybrid solutions, then optimize and maintain them for
                   Start Your Project
                   <ArrowRight size={20} />
                 </motion.a>
+                {/* 
                 <motion.a
                   href="/training"
                   onClick={(e) => handleNavClick(e, '/training')}
@@ -574,6 +575,7 @@ We create cloud-native and hybrid solutions, then optimize and maintain them for
                 >
                   Explore Training
                 </motion.a>
+                */}
               </div>
             </div>
           </motion.div>

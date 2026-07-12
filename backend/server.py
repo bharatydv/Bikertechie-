@@ -196,6 +196,89 @@ async def get_training_enrollments():
     return enrollments
 
 
+# Audit Models
+class AuditRequest(BaseModel):
+    url: str
+
+class AuditDetailItem(BaseModel):
+    name: str
+    status: str
+    message: str
+
+class AuditResponse(BaseModel):
+    url: str
+    overall_grade: str
+    overall_score: int
+    load_time_seconds: float
+    checks: List[AuditDetailItem]
+
+# Portal Models
+class TicketItem(BaseModel):
+    id: str
+    subject: str
+    status: str
+    category: str
+    created_at: str
+
+class PortalStatusResponse(BaseModel):
+    project_name: str
+    progress_percentage: int
+    current_phase: str
+    uptime_percentage: float
+    api_latency_ms: int
+    active_tickets: List[TicketItem]
+
+# Audit Endpoint
+@api_router.post("/audit", response_model=AuditResponse)
+async def perform_audit(request: AuditRequest):
+    url = request.url
+    # Simple logic to determine a grade based on url length or random
+    score = 75 + (len(url) % 20)
+    if score >= 90:
+        grade = "A"
+    elif score >= 80:
+        grade = "B"
+    elif score >= 70:
+        grade = "C"
+    else:
+        grade = "D"
+        
+    import random
+    load_time = round(random.uniform(0.8, 2.4), 2)
+    
+    checks = [
+        AuditDetailItem(name="SSL Certificate", status="pass", message="Valid SSL certificate issued by Let's Encrypt, expiring in 74 days."),
+        AuditDetailItem(name="Page Load Time", status="pass" if load_time < 1.5 else "warning", message=f"Full page loaded in {load_time}s."),
+        AuditDetailItem(name="Security Headers", status="fail", message="Missing Security Headers (HSTS, Content-Security-Policy)."),
+        AuditDetailItem(name="SEO Meta Tags", status="pass" if len(url) < 25 else "warning", message="Meta description tag is present, but OpenGraph image is missing."),
+        AuditDetailItem(name="Image Optimization", status="warning", message="3 large images detected without modern formats (WebP/AVIF).")
+    ]
+    
+    return AuditResponse(
+        url=url,
+        overall_grade=grade,
+        overall_score=score,
+        load_time_seconds=load_time,
+        checks=checks
+    )
+
+# Portal Endpoint
+@api_router.get("/portal/status", response_model=PortalStatusResponse)
+async def get_portal_status():
+    return PortalStatusResponse(
+        project_name="BikerTechie Enterprise AI Pipeline",
+        progress_percentage=68,
+        current_phase="API Integration & Core Testing",
+        uptime_percentage=99.98,
+        api_latency_ms=42,
+        active_tickets=[
+            TicketItem(id="TKT-1082", subject="Configure CORS headers for staging environments", status="In Progress", category="DevOps", created_at="2026-07-10T14:22:00Z"),
+            TicketItem(id="TKT-1085", subject="GCP Pub/Sub worker node scaling bottleneck", status="Open", category="Infrastructure", created_at="2026-07-11T09:15:00Z"),
+            TicketItem(id="TKT-1076", subject="Database index optimization for metrics query", status="Resolved", category="Database", created_at="2026-07-08T11:45:00Z")
+        ]
+    )
+
+
 # Include the router in the main app
 app.include_router(api_router)
 

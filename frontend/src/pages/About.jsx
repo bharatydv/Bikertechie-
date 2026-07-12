@@ -551,6 +551,7 @@ export const About = () => {
             Explore Our Services
             <ArrowRight size={18} />
           </motion.a>
+          {/* 
           <motion.a
             href="/training"
             onClick={(e) => handleNavClick(e, '/training')}
@@ -562,6 +563,7 @@ export const About = () => {
             Get Training & Certificates
             <ArrowRight size={18} />
           </motion.a>
+          */}
         </div>
       </div>
     </motion.div>

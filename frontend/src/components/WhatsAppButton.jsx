@@ -18,10 +18,12 @@ const SERVICES = [
     label: "📜 Certification",
     message: "Hello BikerTechie Team,%0A%0AI am interested in your Certification programs.%0AKindly provide details regarding the available certifications, duration, and fees.%0A%0AThank you for your time.",
   },
+  /*
   {
     label: "🎓 Training",
     message: "Hello BikerTechie Team,%0A%0AI would like to enquire about your Training programs.%0APlease share information on the available courses, schedules, and pricing.%0A%0ALooking forward to hearing from you. Thank you.",
   },
+  */
 ];
 
 const WHATSAPP_BASE = "https://wa.me/918195898448?text=";
@@ -29,8 +31,8 @@ const WHATSAPP_BASE = "https://wa.me/918195898448?text=";
 const ROTATING_TEXTS = [
   "Chat with us ✦",
   "We reply fast ✦",
-  "AI $ Cloud Services ✦",
-  "Training $ Certification ✦",
+  "AI & Cloud Services ✦",
+  "Careers & Certification ✦",
 ];
 
 export const WhatsAppButton = () => {

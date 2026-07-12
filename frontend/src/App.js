@@ -13,9 +13,17 @@ import { WhatsAppButton } from "./components/WhatsAppButton";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Training from "./pages/Training";
+// import Training from "./pages/Training";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
+import Playground from "./pages/Playground";
+import CaseStudies from "./pages/CaseStudies";
+import ClientPortal from "./pages/ClientPortal";
+import Auditor from "./pages/Auditor";
+import Blog from "./pages/Blog";
+
+// Assistant widget
+// import AIAssistantWidget from "./components/AIAssistantWidget";
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -38,9 +46,14 @@ const AnimatedRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/training" element={<Training />} />
+        {/* <Route path="/training" element={<Training />} /> */}
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/playground" element={<Playground />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/portal" element={<ClientPortal />} />
+        <Route path="/audit" element={<Auditor />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </AnimatePresence>
   );
@@ -57,6 +70,7 @@ function App() {
         </main>
         <Footer />
         <WhatsAppButton />
+        {/* <AIAssistantWidget /> */}
       </BrowserRouter>
       <Toaster 
         position="top-right" 

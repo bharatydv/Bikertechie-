@@ -14,15 +14,15 @@ const footerLinks = {
   ],
   company: [
     { name: 'About Us', path: '/about' },
-    { name: 'Training', path: '/training' },
     { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' },
   ],
-  training: [
-    { name: 'Cloud Foundations', path: '/training' },
-    { name: 'Cloud Architect', path: '/training' },
-    { name: 'DevOps & Kubernetes', path: '/training' },
-    { name: 'AI on Cloud', path: '/training' },
+  resources: [
+    { name: 'Cloud Sandbox', path: '/playground' },
+    { name: 'Case Studies', path: '/case-studies' },
+    { name: 'Cloud Auditor', path: '/audit' },
+    { name: 'Tech Blog', path: '/blog' },
+    { name: 'Client Portal', path: '/portal' },
   ],
 };
 
@@ -139,11 +139,11 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Training (RESTORED ✅) */}
+          {/* Resources Column */}
           <div>
-            <h3 className="text-white font-semibold mb-2">Training</h3>
+            <h3 className="text-white font-semibold mb-2">Resources</h3>
             <ul className="space-y-1 text-sm text-slate-400">
-              {footerLinks.training.map(link => (
+              {footerLinks.resources.map(link => (
                 <li key={link.name}>
                   <a href={link.path} onClick={(e) => handleLinkClick(e, link.path)} className="hover:text-white">
                     {link.name}

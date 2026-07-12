@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 
 class BikerTechieAPITester:
-    def __init__(self, base_url="https://enterprise-growth-ai.preview.emergentagent.com"):
+    def __init__(self, base_url="http://127.0.0.1:8000"):
         self.base_url = base_url
         self.tests_run = 0
         self.tests_passed = 0
@@ -182,7 +182,7 @@ def main():
     
     # Setup
     import sys
-    base_url = sys.argv[1] if len(sys.argv) > 1 else "https://enterprise-growth-ai.preview.emergentagent.com"
+    base_url = sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:8000"
     tester = BikerTechieAPITester(base_url=base_url)
     
     # Run all tests
